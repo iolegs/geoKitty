@@ -15,6 +15,7 @@
 		FBC03F8D1B8E1C4B0047A5E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC03F8C1B8E1C4B0047A5E1 /* Images.xcassets */; };
 		FBC03F901B8E1C4B0047A5E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC03F8E1B8E1C4B0047A5E1 /* LaunchScreen.xib */; };
 		FBC03F9C1B8E1C4B0047A5E1 /* geoKittyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC03F9B1B8E1C4B0047A5E1 /* geoKittyTests.m */; };
+		FBC03FA61B8E266C0047A5E1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC03FA51B8E266C0047A5E1 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		FBC03F951B8E1C4B0047A5E1 /* geoKittyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geoKittyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC03F9A1B8E1C4B0047A5E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBC03F9B1B8E1C4B0047A5E1 /* geoKittyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = geoKittyTests.m; sourceTree = "<group>"; };
+		FBC03FA51B8E266C0047A5E1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC03FA61B8E266C0047A5E1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC03F7B1B8E1C4B0047A5E1 /* geoKitty */,
+				FBC03FA71B8E26770047A5E1 /* Frameworks */,
 				FBC03F981B8E1C4B0047A5E1 /* geoKittyTests */,
 				FBC03F7A1B8E1C4B0047A5E1 /* Products */,
 			);
@@ -120,6 +124,14 @@
 				FBC03F9A1B8E1C4B0047A5E1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBC03FA71B8E26770047A5E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBC03FA51B8E266C0047A5E1 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
