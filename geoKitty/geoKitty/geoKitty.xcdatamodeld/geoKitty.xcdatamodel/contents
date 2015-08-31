@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="OSManagedAnnotation" representedClassName="OSManagedAnnotation" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="OSManagedPhoto" inverseName="owner" inverseEntity="OSManagedPhoto" syncable="YES"/>
+    </entity>
+    <entity name="OSManagedPhoto" representedClassName="OSManagedPhoto" syncable="YES">
+        <attribute name="album_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="owner_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="photo_75" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo_130" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo_604" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo_807" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo_1280" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo_2560" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OSManagedAnnotation" inverseName="photo" inverseEntity="OSManagedAnnotation" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="OSManagedPhoto" positionX="4626" positionY="-1170" width="128" height="298"/>
+        <element name="OSManagedAnnotation" positionX="4428" positionY="-1170" width="128" height="73"/>
+    </elements>
 </model>

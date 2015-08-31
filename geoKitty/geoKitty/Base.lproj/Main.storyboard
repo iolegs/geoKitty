@@ -1,25 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="B0g-CD-CKy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Kitties-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="MapVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHu-BL-oLY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tHu-BL-oLY" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="ETy-Nu-MoI"/>
+                            <constraint firstItem="tHu-BL-oLY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ouq-zD-j7k"/>
+                            <constraint firstAttribute="trailing" secondItem="tHu-BL-oLY" secondAttribute="trailing" id="g4d-Bm-XvC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="tHu-BL-oLY" secondAttribute="bottom" id="gGj-ix-Jsr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Kitties" id="Y4O-ps-IYj"/>
+                    <connections>
+                        <outlet property="mapView" destination="tHu-BL-oLY" id="Vc1-1Y-hkb"/>
+                        <segue destination="2GR-sp-vtc" kind="push" identifier="kittySegue" id="mXh-gD-uPk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="582" y="395"/>
+        </scene>
+        <!--Kitty-->
+        <scene sceneID="1XZ-5V-F8s">
+            <objects>
+                <viewController id="2GR-sp-vtc" customClass="OSKittyVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ccp-Y8-OFd"/>
+                        <viewControllerLayoutGuide type="bottom" id="lgz-Ed-Gfg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aWq-Le-KXp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ffh-AS-XaM" customClass="OSPhotoView">
+                                <rect key="frame" x="16" y="72" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="1vm-7v-tvx"/>
+                                    <constraint firstAttribute="height" constant="288" id="d1a-Js-Wc3"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRi-bu-Cu1">
+                                <rect key="frame" x="41" y="368" width="239" height="30"/>
+                                <state key="normal" title="Показать профиль пользователя">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showProfileAction:" destination="2GR-sp-vtc" eventType="touchUpInside" id="pcE-SU-JvI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ffh-AS-XaM" secondAttribute="centerX" id="0fi-1d-HPg"/>
+                            <constraint firstAttribute="centerX" secondItem="eRi-bu-Cu1" secondAttribute="centerX" id="Od7-0n-uwa"/>
+                            <constraint firstItem="eRi-bu-Cu1" firstAttribute="top" secondItem="Ffh-AS-XaM" secondAttribute="bottom" constant="8" id="u2k-cM-G3M"/>
+                            <constraint firstItem="Ffh-AS-XaM" firstAttribute="top" secondItem="Ccp-Y8-OFd" secondAttribute="bottom" constant="8" id="y6g-un-dC3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kitty" id="gzV-2T-xfJ"/>
+                    <connections>
+                        <outlet property="photoView" destination="Ffh-AS-XaM" id="N1L-fI-MZN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Em8-xx-888" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="985" y="395"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cHw-VL-eJN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B0g-CD-CKy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vKU-tk-Og7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="IJe-j1-LJ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xs3-at-X6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="166.40000000000001" y="395.70666666666665"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
